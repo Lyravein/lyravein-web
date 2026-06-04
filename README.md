@@ -1,6 +1,6 @@
 # Denia Bot 🤖
 
-> AI companion Discord bot — chat cerdas, web search real-time, dan joki manager.
+> AI companion Discord bot chat cerdas, web search real-time, dan joki manager.
 
 [![Discord](https://img.shields.io/badge/Add%20to%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1510462661836542063&permissions=8&scope=bot+applications.commands)
 [![Website](https://img.shields.io/badge/Website-lyravein.my.id/denia-c084fc?style=for-the-badge)](https://lyravein.my.id/denia)
@@ -9,12 +9,11 @@
 
 ## ✨ Features
 
-- **AI Chat** — Multi-provider (Groq LLaMA 3.3 70B + OpenRouter DeepSeek), fallback otomatis
-- **Web Search** — Real-time search via Serper API, trigger dengan kata "cari", "cariin", dll
-- **Memory System** — Ingat konteks percakapan per channel
-- **Persona System** — Ganti karakter/kepribadian bot
-- **Joki Manager** — Track akun joki per user via DM (private, per-user list)
-- **Typing Simulation** — Simulate typing sebelum reply
+- **AI Chat** · Multi-provider (Groq LLaMA 3.3 70B + OpenRouter DeepSeek), fallback otomatis
+- **Web Search** · Real-time search via Serper API, trigger dengan kata "cari", "cariin", dll
+- **Memory System** · Ingat konteks percakapan per channel
+- **Persona System** · Ganti karakter/kepribadian bot
+- **Typing Simulation** · Simulate typing sebelum reply
 
 ## 🛠 Tech Stack
 
@@ -39,8 +38,6 @@ discordbot/
 │   ├── cooldown.js
 │   ├── typing.js
 │   └── stats.js
-├── data/
-│   └── joki_accounts.json
 └── web/                  # Landing page website
     ├── index.html        # Coming soon
     └── denia/
@@ -56,10 +53,6 @@ discordbot/
 | `/stats` | Total pesan diproses |
 | `/forget` | Reset memory channel |
 | `/persona [nama]` | Ganti persona bot |
-| `/joki tambah` | Tambah akun joki (DM only) |
-| `/joki kurang` | Kurangi 1 minggu |
-| `/joki list` | Lihat list aktif |
-| `/joki hapus` | Hapus akun |
 
 ## 🔧 Setup
 
