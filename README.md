@@ -1,38 +1,81 @@
-<div align="center">
+# Denia Bot 🤖
 
-# hey, i'm lyravein
+> AI companion Discord bot — chat cerdas, web search real-time, dan joki manager.
 
-<img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&pause=1000&color=C084FC&center=true&vCenter=true&width=500&lines=Game+Developer;Bot+Developer;JavaScript+%2F+Node.js;C%23+%2F+Python;Always+building+something" alt="Typing SVG" />
-
-</div>
-
----
-
-### 🛠 Tech Stack
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Discord.js](https://img.shields.io/badge/Discord.js-5865F2?style=for-the-badge&logo=discord&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+[![Discord](https://img.shields.io/badge/Add%20to%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1510462661836542063&permissions=8&scope=bot+applications.commands)
+[![Website](https://img.shields.io/badge/Website-lyravein.my.id/denia-c084fc?style=for-the-badge)](https://lyravein.my.id/denia)
 
 ---
 
-### 🤖 Projects
+## ✨ Features
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **[Denia Bot](https://lyravein.my.id/denia)** | AI companion Discord bot | Node.js, Discord.js |
+- **AI Chat** — Multi-provider (Groq LLaMA 3.3 70B + OpenRouter DeepSeek), fallback otomatis
+- **Web Search** — Real-time search via Serper API, trigger dengan kata "cari", "cariin", dll
+- **Memory System** — Ingat konteks percakapan per channel
+- **Persona System** — Ganti karakter/kepribadian bot
+- **Joki Manager** — Track akun joki per user via DM (private, per-user list)
+- **Typing Simulation** — Simulate typing sebelum reply
+
+## 🛠 Tech Stack
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Discord.js](https://img.shields.io/badge/Discord.js-5865F2?style=flat-square&logo=discord&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+## 📂 Structure
+
+```
+discordbot/
+├── index.js              # Entry point
+├── deploy-commands.js    # Deploy slash commands
+├── ai/
+│   ├── providers.js      # AI provider fallback (Groq → OpenRouter)
+│   ├── memory.js         # Conversation memory
+│   └── persona.js        # Persona system
+├── commands/             # Slash command handlers
+├── features/             # Feature modules
+│   ├── joki.js           # Joki manager (per-user)
+│   ├── webSearch.js      # Web search (Serper)
+│   ├── cooldown.js
+│   ├── typing.js
+│   └── stats.js
+├── data/
+│   └── joki_accounts.json
+└── web/                  # Landing page website
+    ├── index.html        # Coming soon
+    └── denia/
+        └── index.html    # Bot landing page
+```
+
+## ⚡ Slash Commands
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Lihat daftar command |
+| `/status` | Status bot & provider aktif |
+| `/stats` | Total pesan diproses |
+| `/forget` | Reset memory channel |
+| `/persona [nama]` | Ganti persona bot |
+| `/joki tambah` | Tambah akun joki (DM only) |
+| `/joki kurang` | Kurangi 1 minggu |
+| `/joki list` | Lihat list aktif |
+| `/joki hapus` | Hapus akun |
+
+## 🔧 Setup
+
+```bash
+git clone https://github.com/Lyravein/discord-bot-project.git
+cd discord-bot-project
+npm install
+cp .env.example .env  # isi API keys
+node deploy-commands.js
+pm2 start index.js --name denia
+```
+
+## 🌐 Website
+
+Landing page bot: [lyravein.my.id/denia](https://lyravein.my.id/denia)
 
 ---
 
-### 📫 Contact
-
-[![Discord](https://img.shields.io/badge/Discord-lurafinn-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.com/users/543678254318485515)
-[![Denia Bot](https://img.shields.io/badge/Denia%20Bot-Add%20to%20Discord-7c3aed?style=flat-square&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1510462661836542063&permissions=8&scope=bot+applications.commands)
-
----
-
-<div align="center">
-<img src="https://komarev.com/ghpvc/?username=lyravein&color=c084fc&style=flat-square" alt="profile views" />
-</div>
+Made with 💜 by [lyravein](https://github.com/Lyravein)
