@@ -498,7 +498,14 @@
 
 <!-- Nav -->
 <nav>
-    <a href="/denia" class="nav-logo">Denia</a>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+        <a href="/" style="display:inline-flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.35);font-size:0.82rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+            lyravein.my.id
+        </a>
+        <span style="color:rgba(255,255,255,0.1);font-size:0.8rem">/</span>
+        <a href="/denia" class="nav-logo">Denia</a>
+    </div>
     <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#commands">Commands</a></li>
