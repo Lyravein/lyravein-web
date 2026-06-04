@@ -157,10 +157,26 @@
             object-fit: cover;
             border: 3px solid rgba(192,132,252,0.4);
             box-shadow: 0 0 40px rgba(192,132,252,0.3), 0 0 80px rgba(192,132,252,0.1);
-            margin: 0 auto 2rem;
+            margin: 0 auto 0.75rem;
             display: block;
             animation: fadeUp 0.6s ease 0.1s both;
+            object-position: center top;
         }
+
+        .hero-credit {
+            font-size: 0.72rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.6s ease 0.15s both;
+        }
+
+        .hero-credit a {
+            color: rgba(192,132,252,0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .hero-credit a:hover { color: var(--accent); }
 
         .hero-title {
             font-size: clamp(3rem, 10vw, 6rem);
@@ -501,11 +517,11 @@
             Online & Ready
         </div>
         <img
-            src="./denia_avatar.png"
-            alt="Denia"
+            src="https://cdn.donmai.us/360x360/30/42/3042175c5ab64244e924e69f63cdde8e.jpg"
+            alt="Denia — art by ashamutoki"
             class="hero-avatar"
-            onerror="this.style.display='none'"
         >
+        <div class="hero-credit">art by <a href="https://danbooru.donmai.us/posts/11509101" target="_blank" rel="noopener">ashamutoki</a></div>
         <h1 class="hero-title">Denia</h1>
         <p class="hero-sub">AI companion untuk Discord server kamu. Chat cerdas, web search real-time, dan banyak lagi — semua dalam satu bot.</p>
         <div class="hero-actions">
