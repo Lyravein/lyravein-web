@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lyravein — Coming Soon</title>
+    <meta name="description" content="lyravein — portfolio coming soon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --accent: #c084fc;
+            --accent2: #818cf8;
+            --bg: #07060f;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'Outfit', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Animated gradient orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .orb-1 { width: 500px; height: 500px; background: #7c3aed; top: -150px; left: -150px; animation-delay: 0s; }
+        .orb-2 { width: 400px; height: 400px; background: #4f46e5; bottom: -100px; right: -100px; animation-delay: 3s; }
+        .orb-3 { width: 300px; height: 300px; background: #c084fc; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.25);
+            border-radius: 999px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .dot {
+            width: 7px; height: 7px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .denia-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.75rem 1.75rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .denia-link:hover {
+            background: rgba(192, 132, 252, 0.1);
+            border-color: rgba(192, 132, 252, 0.4);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle var(--d) ease-in-out infinite var(--delay);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--o); }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="badge"><span class="dot"></span> Coming Soon</div>
+        <div class="logo">lyravein</div>
+        <p class="tagline">Something is being crafted. Stay tuned.</p>
+        <a href="/denia" class="denia-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019"/></svg>
+            Lihat Denia Bot →
+        </a>
+    </div>
+
+    <script>
+        // Generate random stars
+        const starsEl = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.cssText = `
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                --d: ${2 + Math.random() * 4}s;
+                --delay: ${Math.random() * 4}s;
+                --o: ${0.3 + Math.random() * 0.7};
+            `;
+            starsEl.appendChild(star);
+        }
+    </script>
+</body>
+</html>
