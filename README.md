@@ -20,19 +20,7 @@
 - Memory per channel · Persona system · Typing simulation
 - Built with **Node.js** · **Discord.js** · **Firebase Firestore**
 
----
 
-### 🏨 RoomFall
-> First-person asymmetric game: berpacu membersihkan hotel yang sudah dirusuh sebelum timer habis.
-
-[![Website](https://img.shields.io/badge/Website-lyravein.my.id/roomfall-fbbf24?style=flat-square)](https://lyravein.my.id/roomfall)
-
-- Two-phase gameplay: Sabotage (timelapse AI) → Cleanup (real-time FPS)
-- ScriptableObject-driven architecture, event-based system
-- Roadmap: asymmetric multiplayer (Guest vs Cleaning Service)
-- Built with **Unity 6** · **C#** · **URP** · **NavMesh**
-
----
 
 ## 🛠 Tech I Use
 
