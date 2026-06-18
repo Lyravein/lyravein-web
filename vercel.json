@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/roomfall/:path*", "destination": "/RoomFall/:path*" },
+    { "source": "/roomfall", "destination": "/RoomFall/index.html" }
+  ]
+}
