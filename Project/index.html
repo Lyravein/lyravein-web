@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love 🤍</title>
+
+    <link rel="stylesheet" href="assets/css/scrip.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio id="bgm" loop>
+        <!-- ngko gantien lagu ng kene -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <canvas id="stars"></canvas>
+
+    <section id="welcome" class="page active">
+        <div class="top">FOR MY LOVE</div>
+        <h1></h1>
+        <p>
+            Thank you for being here.<br>
+            You deserve all the good things in life.
+        </p>
+        <button id="startBtn">Continue</button>
+    </section>
+
+    <section id="gallery" class="page">
+        <h2>All About You</h2>
+        <div class="grid">
+            <div class="photo-wrapper">
+                <img src="img1.jpg" alt="Gallery Image 1">
+                <div class="caption">Beautiful moments ✨</div>
+            </div>
+            <div class="photo-wrapper">
+                <img src="img2.jpg" alt="Gallery Image 2">
+                <div class="caption">Our first date ☕</div>
+            </div>
+            <div class="photo-wrapper">
+                <img src="img3.jpg" alt="Gallery Image 3">
+                <div class="caption">You look so pretty here 💖</div>
+            </div>
+            <div class="photo-wrapper">
+                <img src="img4.jpg" alt="Gallery Image 4">
+                <div class="caption">Always with you 🌻</div>
+            </div>
+        </div>
+        <button id="nextBtn">Next</button>
+    </section>
+
+    <section id="letter" class="page">
+        <h2>My Letter</h2>
+        <div class="letter">
+            <p>Happy Birthday ❤️</p>
+            <p>
+                Terima kasih sudah hadir dalam hidupku.<br>
+                Semoga semua impianmu tercapai,<br>
+                dan semoga kita bisa terus membuat<br>
+                kenangan indah bersama.
+            </p>
+            <p>Aku sayang kamu.</p>
+        </div>
+        <button id="finishBtn">Open Surprise</button>
+    </section>
+
+    <section id="finish" class="page">
+        <div class="sparkle"></div>
+        
+        <div id="giftBox" class="gift-box">
+            <div class="gift-icon">🎁</div>
+            <p>Tap to open</p>
+        </div>
+
+        <div id="surpriseContent" class="surprise-content" style="display: none;">
+            <div class="surprise-image">
+                <img src="surprise.jpg" alt="Surprise Photo">
+            </div>
+            <h1>Happy Birthday</h1>
+            <p>You deserve all the good things in life ✨</p>
+            <button onclick="location.reload()">Replay The Night</button>
+        </div>
+    </section>
+
+    <script src="assets/js/scrip.js"></script>
+
+</body>
+</html>

@@ -3,6 +3,8 @@
     { "source": "/roomfall/:path*", "destination": "/RoomFall/:path*" },
     { "source": "/roomfall", "destination": "/RoomFall/index.html" },
     { "source": "/fivefloors/:path*", "destination": "/FiveFloors/:path*" },
-    { "source": "/fivefloors", "destination": "/FiveFloors/index.html" }
+    { "source": "/fivefloors", "destination": "/FiveFloors/index.html" },
+    { "source": "/project/:path*", "destination": "/Project/:path*" },
+    { "source": "/project", "destination": "/Project/index.html" }
   ]
 }
