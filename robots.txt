@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Project/
+
+Sitemap: https://lyravein.my.id/sitemap.xml

@@ -1,0 +1,5 @@
+Contact: https://github.com/Lyravein
+Expires: 2027-10-17T00:00:00.000Z
+Preferred-Languages: id, en
+Canonical: https://lyravein.my.id/.well-known/security.txt
+Policy: https://github.com/Lyravein

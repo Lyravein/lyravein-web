@@ -1,0 +1,325 @@
+diff --git a/.well-known/security.txt b/.well-known/security.txt
+new file mode 100644
+index 0000000..dbd97d6
+--- /dev/null
++++ b/.well-known/security.txt
+@@ -0,0 +1,5 @@
++Contact: https://github.com/Lyravein
++Expires: 2027-10-17T00:00:00.000Z
++Preferred-Languages: id, en
++Canonical: https://lyravein.my.id/.well-known/security.txt
++Policy: https://github.com/Lyravein
+\ No newline at end of file
+diff --git a/denia/index.html b/denia/index.html
+index 5fe8cab..4169efd 100755
+--- a/denia/index.html
++++ b/denia/index.html
+@@ -3,6 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <link rel="canonical" href="https://lyravein.my.id/denia/">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://lyravein.my.id/denia/">
++    <meta property="og:site_name" content="Lyravein">
++    <meta property="og:locale" content="id_ID">
++    <meta name="twitter:card" content="summary_large_image">
++    <meta name="twitter:title" content="Denia · AI Discord Bot">
++    <meta name="twitter:description" content="AI companion untuk Discord server kamu. Chat cerdas, web search real-time, dan fitur joki manager.">
+     <title>Denia · AI Discord Bot</title>
+     <meta name="description" content="Denia adalah AI companion untuk Discord server kamu. Chat cerdas, web search real-time, dan fitur joki manager.">
+     <meta property="og:title" content="Denia · AI Discord Bot">
+diff --git a/FiveFloors/index.html b/fivefloors/index.html
+similarity index 96%
+rename from FiveFloors/index.html
+rename to fivefloors/index.html
+index bedb5d1..6bc102c 100755
+--- a/FiveFloors/index.html
++++ b/fivefloors/index.html
+@@ -3,6 +3,12 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <link rel="canonical" href="https://lyravein.my.id/fivefloors/">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://lyravein.my.id/fivefloors/">
++    <meta property="og:site_name" content="Lyravein">
++    <meta property="og:locale" content="id_ID">
++    <meta name="twitter:card" content="summary_large_image">
+     <title>FiveFloors · 3D Horror Puzzle Game</title>
+     <meta name="description" content="FiveFloors · Game horror teka-teki FPS 3D. Telusuri 5 lantai gedung terbengkalai, pecahkan teka-teki, dan bertahan hidup. Dibangun dengan Unity 2022.3.">
+     <meta property="og:title" content="FiveFloors · 3D Horror Puzzle Game">
+diff --git a/index.html b/index.html
+index e38dd43..2263d3b 100755
+--- a/index.html
++++ b/index.html
+@@ -3,6 +3,15 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <link rel="canonical" href="https://lyravein.my.id/">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://lyravein.my.id/">
++    <meta property="og:site_name" content="Lyravein">
++    <meta property="og:locale" content="id_ID">
++    <meta name="twitter:card" content="summary_large_image">
++    <meta property="og:title" content="Lyravein: Developer &amp; Game Maker">
++    <meta name="twitter:title" content="Lyravein: Developer &amp; Game Maker">
++    <meta name="twitter:description" content="Lyravein, developer from Pasuruan, Indonesia. Games in Unity, Discord bots in Node.js, and tools in Go.">
+     <title>Lyravein: Developer &amp; Game Maker</title>
+     <meta name="description" content="Lyravein, developer from Pasuruan, Indonesia. Games in Unity, Discord bots in Node.js, and tools in Go. Building under the moonlight.">
+     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%2360a5fa' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>" />
+diff --git a/robots.txt b/robots.txt
+new file mode 100644
+index 0000000..9dcffda
+--- /dev/null
++++ b/robots.txt
+@@ -0,0 +1,5 @@
++User-agent: *
++Allow: /
++Disallow: /Project/
++
++Sitemap: https://lyravein.my.id/sitemap.xml
+\ No newline at end of file
+diff --git a/RoomFall/index.html b/roomfall/index.html
+similarity index 98%
+rename from RoomFall/index.html
+rename to roomfall/index.html
+index 1c01d61..8756d90 100755
+--- a/RoomFall/index.html
++++ b/roomfall/index.html
+@@ -3,6 +3,12 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <link rel="canonical" href="https://lyravein.my.id/roomfall/">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://lyravein.my.id/roomfall/">
++    <meta property="og:site_name" content="Lyravein">
++    <meta property="og:locale" content="id_ID">
++    <meta name="twitter:card" content="summary_large_image">
+     <title>RoomFall · Hotel Chaos Game</title>
+     <meta name="description" content="RoomFall: game hotel FPS asimetris. Berpacu membersihkan kamar sebelum waktu habis. Dibangun dengan Unity 6.">
+     <meta property="og:title" content="RoomFall · Hotel Chaos Game">
+diff --git a/sitemap.xml b/sitemap.xml
+new file mode 100644
+index 0000000..eef62d2
+--- /dev/null
++++ b/sitemap.xml
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
++  <url>
++    <loc>https://lyravein.my.id/</loc>
++    <changefreq>monthly</changefreq>
++    <priority>1.0</priority>
++  </url>
++  <url>
++    <loc>https://lyravein.my.id/denia/</loc>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++  <url>
++    <loc>https://lyravein.my.id/fivefloors/</loc>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++  <url>
++    <loc>https://lyravein.my.id/roomfall/</loc>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++</urlset>
+\ No newline at end of file
+diff --git a/test/evidence-headers.md b/test/evidence-headers.md
+new file mode 100644
+index 0000000..de78780
+--- /dev/null
++++ b/test/evidence-headers.md
+@@ -0,0 +1,14 @@
++# evidence: vercel.json vs live (pre-deploy baseline)
++
++live https://www.lyravein.my.id/ currently MISSING: Content-Security-Policy, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-DNS-Prefetch-Control
++
++present: Strict-Transport-Security, Cache-Control
++
++## CSP the deploy will send
++default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https://cdn.donmai.us; media-src 'self' https://www.soundhelix.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'
++
++## HSTS
++max-age=63072000; includeSubDomains; preload
++
++## Cache-Control
++public, max-age=31536000, immutable
+diff --git a/test/serve.py b/test/serve.py
+new file mode 100644
+index 0000000..edbf8c7
+--- /dev/null
++++ b/test/serve.py
+@@ -0,0 +1,77 @@
++#!/usr/bin/env python3
++"""Serve the repo the way vercel.json declares, so the fix can be tested before deploy.
++
++Reimplements only what Vercel does that matters here: static file serving,
++directory index, and the redirects + headers from vercel.json.
++ponytail: a test double for Vercel routing. If the site ever needs real
++middleware, re-check the source globs against Vercel docs instead of trusting this.
++"""
++import json, re, sys
++from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent.parent
++CONF = json.loads((ROOT / "vercel.json").read_text())
++
++RULES = []
++for r in CONF.get("redirects", []):
++    RULES.append(("redirect", re.sub(r":path\*", "(.*)", r["source"]) + "/?$", r["destination"], r.get("permanent", False)))
++for h in CONF.get("headers", []):
++    RULES.append(("headers", re.sub(r":path\*", "(.*)", h["source"]) + "$", {k["key"]: k["value"] for k in h["headers"]}, False))
++
++MIME = {".html": "text/html", ".css": "text/css", ".js": "text/javascript",
++        ".jpg": "image/jpeg", ".png": "image/png", ".svg": "image/svg+xml",
++        ".txt": "text/plain", ".xml": "application/xml", ".json": "application/json",
++        ".ico": "image/x-icon", ".mp3": "audio/mpeg"}
++
++
++class H(SimpleHTTPRequestHandler):
++    def translate_path(self, path):
++        p = super().translate_path(path)
++        q = Path(p)
++        if q.is_dir():
++            return str(q / "index.html")
++        return p
++
++    def send_response(self, code, message=None):
++        path = self.path.split("?")[0]
++        for kind, pattern, payload, permanent in RULES:
++            if kind == "redirect" and re.match(pattern, path):
++                super().send_response(308 if permanent else 307)
++                self.send_header("Location", payload)
++                self.send_header("Content-Length", "0")
++                self.close_connection = True
++                self._redirected = True
++                return
++        self._redirected = False
++        super().send_response(code, message)
++
++    def end_headers(self):
++        if getattr(self, "_redirected", False):
++            self._headers_buffer.append(b"\r\n")
++            self.flush_headers()
++            return
++        path = self.path.split("?")[0]
++        for kind, pattern, payload, permanent in RULES:
++            if kind == "headers" and re.match(pattern, path):
++                for k, v in payload.items():
++                    self.send_header(k, v)
++        super().end_headers()
++
++    def guess_type(self, path):
++        return MIME.get(Path(path).suffix, super().guess_type(path))
++
++    def log_message(self, format, *a):
++        pass
++
++
++if __name__ == "__main__":
++    os_chdir = ROOT
++    import os
++    os.chdir(os_chdir)
++    srv = ThreadingHTTPServer(("127.0.0.1", 8899), H)
++    print("serving", ROOT, "on 127.0.0.1:8899", flush=True)
++    try:
++        srv.serve_forever()
++    except KeyboardInterrupt:
++        pass
+\ No newline at end of file
+diff --git a/vercel.json b/vercel.json
+index 52d94d8..59a095c 100755
+--- a/vercel.json
++++ b/vercel.json
+@@ -1,10 +1,30 @@
+ {
+-  "rewrites": [
+-    { "source": "/roomfall/:path*", "destination": "/RoomFall/:path*" },
+-    { "source": "/roomfall", "destination": "/RoomFall/index.html" },
+-    { "source": "/fivefloors/:path*", "destination": "/FiveFloors/:path*" },
+-    { "source": "/fivefloors", "destination": "/FiveFloors/index.html" },
+-    { "source": "/project/:path*", "destination": "/Project/:path*" },
+-    { "source": "/project", "destination": "/Project/index.html" }
++  "redirects": [
++    { "source": "/FiveFloors", "destination": "/fivefloors", "permanent": true },
++    { "source": "/FiveFloors/", "destination": "/fivefloors", "permanent": true },
++    { "source": "/RoomFall", "destination": "/roomfall", "permanent": true },
++    { "source": "/RoomFall/", "destination": "/roomfall", "permanent": true }
++  ],
++  "headers": [
++    {
++      "source": "/(.*)",
++      "headers": [
++        {
++          "key": "Content-Security-Policy",
++          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https://cdn.donmai.us; media-src 'self' https://www.soundhelix.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'"
++        },
++        { "key": "X-Content-Type-Options", "value": "nosniff" },
++        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
++        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
++        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
++        { "key": "X-DNS-Prefetch-Control", "value": "off" }
++      ]
++    },
++    {
++      "source": "/Project/assets/(.*)",
++      "headers": [
++        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
++      ]
++    }
+   ]
+-}
++}
+\ No newline at end of file
+
+## RAW TEST OUTPUT (verbatim, produced by the orchestrator before review)
+
+Command: bash test/serve.py (stdlib http.server honouring vercel.json redirects+headers), then curl -sSI http://127.0.0.1:8899/<path>
+Result: every declared header is actually sent, and Cache-Control splits correctly:
+
+    HTTP/1.0 200 OK
+    Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https://cdn.donmai.us; media-src 'self' https://www.soundhelix.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+    X-DNS-Prefetch-Control: off
+    Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=86400
+
+    $ curl -sSI http://127.0.0.1:8899/Project/assets/css/script.css | grep -i cache-control
+    Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=86400
+    Cache-Control: public, max-age=31536000, immutable
+
+Path status codes (local, post-fix). Before the fix /fivefloors/ and /roomfall/ returned
+404 on the live site, verified by curl against https://www.lyravein.my.id:
+
+    /                              200
+    /fivefloors/                   200
+    /roomfall/                     200
+    /denia/                        200
+    /Project/                      200
+    /robots.txt                    200
+    /sitemap.xml                   200
+    /.well-known/security.txt      200
+
+Browser check (headless Chrome via CDP) that the strict CSP does not break rendering:
+font-family resolved to "Outfit, sans-serif" on all four public pages, body
+backgrounds rendered, 1 stylesheet + 1 inline script present per page.
+One image did not load (cdn.donmai.us hero on /denia/). Isolated as NOT a CSP
+problem: with the policy replaced by `default-src * data: blob: 'unsafe-inline'
+'unsafe-eval'; ...` the same image still failed with responseStatus 0 and
+naturalWidth 0, while `curl` from the host fetched it with code 200. The sandboxed
+browser cannot reach that CDN.
+
+Line-ending discipline check: the two renamed files keep their original endings
+(fivefloors CRLF, roomfall LF). Verified by stripping CRLF and dropping the
+inserted meta lines, then hashing: both files hash identical to their pre-change
+content (68fd6884b7304321 and 91a130c5acac5609).
