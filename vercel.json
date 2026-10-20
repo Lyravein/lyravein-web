@@ -21,6 +21,12 @@
       ]
     },
     {
+      "source": "/game-hub/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
       "source": "/game-hub/:path*",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
