@@ -10,6 +10,7 @@
   ],
   "rewrites": [
     { "source": "/game-hub", "destination": "https://game-hub.lyravein.my.id/game-hub/" },
+    { "source": "/game-hub/", "destination": "https://game-hub.lyravein.my.id/game-hub/" },
     { "source": "/game-hub/:path*", "destination": "https://game-hub.lyravein.my.id/game-hub/:path*" }
   ],
   "headers": [
