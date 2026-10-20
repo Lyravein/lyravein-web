@@ -8,6 +8,10 @@
     { "source": "/project", "destination": "/Project/", "permanent": true },
     { "source": "/project/", "destination": "/Project/", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/game-hub", "destination": "https://game-hub.lyravein.my.id/game-hub/" },
+    { "source": "/game-hub/:path*", "destination": "https://game-hub.lyravein.my.id/game-hub/:path*" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -22,6 +26,18 @@
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "X-DNS-Prefetch-Control", "value": "off" },
         { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=604800, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/game-hub",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/game-hub/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
