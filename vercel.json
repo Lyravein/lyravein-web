@@ -1,37 +1,52 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "redirects": [
-    { "source": "/FiveFloors", "destination": "/fivefloors", "permanent": true },
-    { "source": "/FiveFloors/", "destination": "/fivefloors", "permanent": true },
-    { "source": "/RoomFall", "destination": "/roomfall", "permanent": true },
-    { "source": "/RoomFall/", "destination": "/roomfall", "permanent": true },
-    { "source": "/project", "destination": "/Project/", "permanent": true },
-    { "source": "/project/", "destination": "/Project/", "permanent": true }
+    {
+      "source": "/FiveFloors",
+      "destination": "/fivefloors",
+      "permanent": true
+    },
+    {
+      "source": "/FiveFloors/",
+      "destination": "/fivefloors",
+      "permanent": true
+    },
+    {
+      "source": "/RoomFall",
+      "destination": "/roomfall",
+      "permanent": true
+    },
+    {
+      "source": "/RoomFall/",
+      "destination": "/roomfall",
+      "permanent": true
+    },
+    {
+      "source": "/project",
+      "destination": "/Project/",
+      "permanent": true
+    },
+    {
+      "source": "/project/",
+      "destination": "/Project/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/game-hub", "destination": "https://game-hub.lyravein.my.id/game-hub/" },
-    { "source": "/game-hub/", "destination": "https://game-hub.lyravein.my.id/game-hub/" },
-    { "source": "/game-hub/:path*", "destination": "https://game-hub.lyravein.my.id/game-hub/:path*" }
-  ],
-  "headers": [
     {
       "source": "/game-hub",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
+      "destination": "https://game-hub.lyravein.my.id/game-hub/"
     },
     {
       "source": "/game-hub/",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
+      "destination": "https://game-hub.lyravein.my.id/game-hub/"
     },
     {
       "source": "/game-hub/:path*",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-      ]
-    },
+      "destination": "https://game-hub.lyravein.my.id/game-hub/:path*"
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
       "headers": [
@@ -39,12 +54,57 @@
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https://cdn.donmai.us; media-src 'self' https://www.soundhelix.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'"
         },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-DNS-Prefetch-Control", "value": "off" },
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=604800, stale-while-revalidate=86400" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "off"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/game-hub",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/game-hub/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/game-hub/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
