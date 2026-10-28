@@ -856,39 +856,24 @@
                     </aside>
                 </article>
 
-                <p class="section-subhead">Deprecated &amp; archived prototypes</p>
+                <p class="section-subhead">Public repositories</p>
 
-                <div class="rows">
-                    <div class="row-item deprecated">
-                        <span class="row-name">RoomFall</span>
-                        <span class="row-desc">Game prototype built in Unity 6 with C#.</span>
-                        <span class="row-meta dep">deprecated</span>
-                    </div>
-                    <div class="row-item deprecated">
-                        <span class="row-name">Chrono Glitch</span>
-                        <span class="row-desc">2D top-down cyberpunk bullet-hell roguelite, designed in a full GDD and now in early development.</span>
-                        <span class="row-meta dep">deprecated</span>
-                    </div>
-                    <div class="row-item deprecated">
-                        <span class="row-name">LunarUP</span>
-                        <span class="row-desc">Game top-up storefront template built with Next.js, React 19, Tailwind CSS v4, and Prisma.</span>
-                        <span class="row-meta dep">deprecated</span>
-                    </div>
-                    <div class="row-item deprecated">
-                        <span class="row-name">Microcafe</span>
-                        <span class="row-desc">Point-of-sale and order management app for small cafés.</span>
-                        <span class="row-meta dep">deprecated</span>
-                    </div>
-                    <a class="rowlink" href="https://github.com/Lyravein/agentrouter-bridge" target="_blank" rel="noopener"><div class="row-item deprecated">
-                        <span class="row-name">agentrouter-bridge</span>
-                        <span class="row-desc">Local API bridge that keeps AI coding agents talking to upstream providers: header handling, request scrubbing, circuit breaker, and key rotation.</span>
-                        <span class="row-meta dep">deprecated</span>
+                <div class="rows" id="repo-rows">
+                    <a class="rowlink" href="https://github.com/Lyravein/game-hub" target="_blank" rel="noopener"><div class="row-item">
+                        <span class="row-name">game-hub</span>
+                        <span class="row-desc">Multi-game dashboard and feed aggregator built with Nuxt 3.</span>
+                        <span class="row-meta pub">JavaScript</span>
                     </div></a>
-                    <div class="row-item deprecated">
-                        <span class="row-name">2D Runner</span>
-                        <span class="row-desc">Minimal 2D endless-runner prototype, an early gameplay exploration.</span>
-                        <span class="row-meta dep">deprecated</span>
-                    </div>
+                    <a class="rowlink" href="https://github.com/Lyravein/Hypoxia" target="_blank" rel="noopener"><div class="row-item">
+                        <span class="row-name">Hypoxia</span>
+                        <span class="row-desc">First-person psychological exploration game prototype in Unity.</span>
+                        <span class="row-meta pub">C#</span>
+                    </div></a>
+                    <a class="rowlink" href="https://github.com/Lyravein/lyravein-web" target="_blank" rel="noopener"><div class="row-item">
+                        <span class="row-name">lyravein-web</span>
+                        <span class="row-desc">Personal portfolio and playground hub, dark moonlit cosmic theme.</span>
+                        <span class="row-meta pub">HTML</span>
+                    </div></a>
                 </div>
             </div>
         </section>
@@ -1014,6 +999,64 @@
                 });
             }, { threshold: 0.12 });
             document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+            /* ---- dynamic github repos ---- */
+            (function fetchRepos() {
+                var container = document.getElementById('repo-rows');
+                if (!container) return;
+                var cacheKey = 'lyr_gh_repos_v1';
+                var cacheTimeKey = 'lyr_gh_repos_time';
+                var now = Date.now();
+                var cached = localStorage.getItem(cacheKey);
+                var cachedTime = localStorage.getItem(cacheTimeKey);
+
+                function render(repos) {
+                    var html = '';
+                    var hidden = ['grok-gateway', 'lyravein'];
+                    var defDescs = {
+                        'lyravein-web': 'Personal portfolio and playground hub, dark moonlit cosmic theme.',
+                        'hypoxia': 'First-person psychological exploration game prototype in Unity.'
+                    };
+                    repos.forEach(function (r) {
+                        if (r.fork) return;
+                        var nameLower = (r.name || '').toLowerCase();
+                        if (hidden.indexOf(nameLower) !== -1) return;
+                        var desc = r.description || defDescs[nameLower] || 'Public repository on GitHub.';
+                        var lang = r.language || 'public';
+                        var link = r.html_url || ('https://github.com/Lyravein/' + r.name);
+                        html += '<a class="rowlink" href="' + link + '" target="_blank" rel="noopener">' +
+                            '<div class="row-item">' +
+                            '<span class="row-name">' + r.name + '</span>' +
+                            '<span class="row-desc">' + desc + '</span>' +
+                            '<span class="row-meta pub">' + lang + '</span>' +
+                            '</div></a>';
+                    });
+                    if (html) {
+                        container.innerHTML = html;
+                    }
+                }
+
+                if (cached && cachedTime && (now - parseInt(cachedTime, 10) < 3600000)) {
+                    try {
+                        render(JSON.parse(cached));
+                        return;
+                    } catch (e) {}
+                }
+
+                fetch('https://api.github.com/users/Lyravein/repos?sort=updated&per_page=30')
+                    .then(function (res) {
+                        if (!res.ok) throw new Error('status ' + res.status);
+                        return res.json();
+                    })
+                    .then(function (data) {
+                        if (Array.isArray(data)) {
+                            localStorage.setItem(cacheKey, JSON.stringify(data));
+                            localStorage.setItem(cacheTimeKey, now.toString());
+                            render(data);
+                        }
+                    })
+                    .catch(function () {});
+            })();
         })();
     </script>
 </body>
