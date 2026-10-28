@@ -6,17 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lyravein.my.id/denia/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://lyravein.my.id/fivefloors/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lyravein.my.id/roomfall/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

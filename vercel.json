@@ -12,16 +12,6 @@
       "permanent": true
     },
     {
-      "source": "/RoomFall",
-      "destination": "/roomfall",
-      "permanent": true
-    },
-    {
-      "source": "/RoomFall/",
-      "destination": "/roomfall",
-      "permanent": true
-    },
-    {
       "source": "/project",
       "destination": "/Project/",
       "permanent": true
