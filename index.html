@@ -570,24 +570,41 @@
         .row-item:hover { background: rgba(96,165,250,.05); padding-left: 12px; }
         .row-name { font-weight: 500; min-width: 190px; }
         .row-desc { color: var(--muted); font-size: .92rem; flex-grow: 1; }
-        .row-meta {
-            font-family: var(--mono);
-            font-size: .72rem;
-            color: var(--muted);
+        .row-meta-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             white-space: nowrap;
         }
-        .row-meta.pub { color: #9fe8b8; }
-        .row-meta.wip { color: #f2c98a; }
-        .row-meta.dep {
-            color: #fca5a5;
+        .row-lang {
+            font-family: var(--mono);
+            font-size: .74rem;
+            color: var(--muted);
+        }
+        .row-meta {
+            font-family: var(--mono);
+            font-size: .68rem;
             font-weight: 500;
-            border: 1px solid rgba(248,113,113,.4);
-            padding: 2px 9px;
-            border-radius: 4px;
-            background: rgba(239,68,68,.16);
-            font-size: .7rem;
             letter-spacing: .08em;
             text-transform: uppercase;
+            padding: 2px 9px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .row-meta.act {
+            color: #86efac;
+            background: rgba(34,197,94,.14);
+            border: 1px solid rgba(74,222,128,.35);
+        }
+        .row-meta.maint {
+            color: #fde047;
+            background: rgba(245,158,11,.14);
+            border: 1px solid rgba(251,191,36,.35);
+        }
+        .row-meta.dep {
+            color: #fca5a5;
+            background: rgba(239,68,68,.16);
+            border: 1px solid rgba(248,113,113,.4);
         }
         .row-item.deprecated .row-desc { color: rgba(154,169,194,.75); }
         .row-item.deprecated:hover .row-desc { color: var(--muted); }
@@ -659,6 +676,7 @@
             .contact-card { padding: 40px 20px; }
             .row-item { flex-wrap: wrap; gap: 6px 14px; }
             .row-name { min-width: 0; }
+            .row-meta-wrap { margin-left: auto; }
             .row-desc { width: 100%; order: 3; }
             .scroll-hint { display: none; }
             section { padding: 64px 0; }
@@ -862,17 +880,26 @@
                     <a class="rowlink" href="https://github.com/Lyravein/game-hub" target="_blank" rel="noopener"><div class="row-item">
                         <span class="row-name">game-hub</span>
                         <span class="row-desc">Multi-game dashboard and feed aggregator built with Nuxt 3.</span>
-                        <span class="row-meta pub">JavaScript</span>
+                        <div class="row-meta-wrap">
+                            <span class="row-lang">JavaScript</span>
+                            <span class="row-meta act">active</span>
+                        </div>
                     </div></a>
                     <a class="rowlink" href="https://github.com/Lyravein/Hypoxia" target="_blank" rel="noopener"><div class="row-item">
                         <span class="row-name">Hypoxia</span>
                         <span class="row-desc">First-person psychological exploration game prototype in Unity.</span>
-                        <span class="row-meta pub">C#</span>
+                        <div class="row-meta-wrap">
+                            <span class="row-lang">C#</span>
+                            <span class="row-meta maint">maintained</span>
+                        </div>
                     </div></a>
                     <a class="rowlink" href="https://github.com/Lyravein/lyravein-web" target="_blank" rel="noopener"><div class="row-item">
                         <span class="row-name">lyravein-web</span>
                         <span class="row-desc">Personal portfolio and playground hub, dark moonlit cosmic theme.</span>
-                        <span class="row-meta pub">HTML</span>
+                        <div class="row-meta-wrap">
+                            <span class="row-lang">HTML</span>
+                            <span class="row-meta act">active</span>
+                        </div>
                     </div></a>
                 </div>
             </div>
@@ -1004,11 +1031,25 @@
             (function fetchRepos() {
                 var container = document.getElementById('repo-rows');
                 if (!container) return;
-                var cacheKey = 'lyr_gh_repos_v1';
-                var cacheTimeKey = 'lyr_gh_repos_time';
+                var cacheKey = 'lyr_gh_repos_v2';
+                var cacheTimeKey = 'lyr_gh_repos_time_v2';
                 var now = Date.now();
                 var cached = localStorage.getItem(cacheKey);
                 var cachedTime = localStorage.getItem(cacheTimeKey);
+
+                function getStatus(r, nowMs) {
+                    var dateStr = r.pushed_at || r.updated_at;
+                    if (!dateStr) return { cls: 'maint', label: 'maintained' };
+                    var pushedTime = new Date(dateStr).getTime();
+                    var diffDays = (nowMs - pushedTime) / (1000 * 60 * 60 * 24);
+                    if (diffDays > 365) {
+                        return { cls: 'dep', label: 'deprecated' };
+                    }
+                    if (diffDays > 7) {
+                        return { cls: 'maint', label: 'maintained' };
+                    }
+                    return { cls: 'act', label: 'active' };
+                }
 
                 function render(repos) {
                     var html = '';
@@ -1022,13 +1063,18 @@
                         var nameLower = (r.name || '').toLowerCase();
                         if (hidden.indexOf(nameLower) !== -1) return;
                         var desc = r.description || defDescs[nameLower] || 'Public repository on GitHub.';
-                        var lang = r.language || 'public';
+                        var lang = r.language || '';
+                        var st = getStatus(r, now);
                         var link = r.html_url || ('https://github.com/Lyravein/' + r.name);
+                        var langSpan = lang ? '<span class="row-lang">' + lang + '</span>' : '';
                         html += '<a class="rowlink" href="' + link + '" target="_blank" rel="noopener">' +
                             '<div class="row-item">' +
                             '<span class="row-name">' + r.name + '</span>' +
                             '<span class="row-desc">' + desc + '</span>' +
-                            '<span class="row-meta pub">' + lang + '</span>' +
+                            '<div class="row-meta-wrap">' +
+                            langSpan +
+                            '<span class="row-meta ' + st.cls + '">' + st.label + '</span>' +
+                            '</div>' +
                             '</div></a>';
                     });
                     if (html) {
